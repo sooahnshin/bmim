@@ -1,4 +1,4 @@
-# Replication Codes for "$\ell_1$-based Bayesian Ideal Point Model for Multidimensional Politics"
+# Replication Codes for "L1-based Bayesian Ideal Point Model for Multidimensional Politics"
 
 -   To begin, install the `l1ideal` package included in the folder as a `tar.gz` file. The package is used for the proposed method in the paper. It is also available from [this repo](https://github.com/sooahnshin/l1ideal).
 
