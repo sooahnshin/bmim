@@ -63,13 +63,18 @@ res <- l1ideal(rc, dimensions = 2,  mcmc  = 10000, thin = 10, burnin = 5000,
 plot.l1ideal(res)
 res_df = summary.l1ideal(res)
 
-save.image("../../data/illustration/toy_example.RData")
+saveRDS(res_df, "../../data/illustration/toy_example_res_df.rds")
+saveRDS(idl, "../../data/illustration/toy_example_idl.rds")
+saveRDS(wn, "../../data/illustration/toy_example_wn.rds")
+
 
 ##########################################################################
 # Part 2 ------------------------------------------------------------------
 ##########################################################################
 # Load the saved results
-load("../../data/illustration/toy_example.RData")
+res_df <- readRDS("../../data/illustration/toy_example_res_df.rds")
+idl <- readRDS("../../data/illustration/toy_example_idl.rds")
+wn <- readRDS("../../data/illustration/toy_example_wn.rds")
 
 df <- data.frame(label = c("A1", "A2", "B1", "B2"),
            group1 = as.factor(c("A", "A", "B", "B")),
