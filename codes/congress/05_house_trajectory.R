@@ -28,7 +28,13 @@ circleFun <- function(center = c(0,0),diameter = 2, npoints = 1000){
 # H52 -------------------------------------------------------
 
 # prepare data
-load("../../data/congress/results/H52.RData")
+votes <- readRDS("../../data/congress/results/H52_votes.rds")
+legis <- readRDS("../../data/congress/results/H52_legis.rds")
+bills <- readRDS("../../data/congress/results/H52_bills.rds")
+res <- readRDS("../../data/congress/results/H52_res.rds")
+res$legislators <- readRDS("../../data/congress/results/H52_res_legislators.rds")
+res$yea_positions <- readRDS("../../data/congress/results/H52_res_yea_positions.rds")
+res$nay_positions <- readRDS("../../data/congress/results/H52_res_nay_positions.rds")
 
 res$running_time
 # [1] "14037.595 seconds"
@@ -116,7 +122,13 @@ dfwn52 <- ideal_df
 # H53 ---------------------------------------------------------------------
 
 # prepare data
-load("../../data/congress/results/H53.RData")
+votes <- readRDS("../../data/congress/results/H53_votes.rds")
+legis <- readRDS("../../data/congress/results/H53_legis.rds")
+bills <- readRDS("../../data/congress/results/H53_bills.rds")
+res <- readRDS("../../data/congress/results/H53_res.rds")
+res$legislators <- readRDS("../../data/congress/results/H53_res_legislators.rds")
+res$yea_positions <- readRDS("../../data/congress/results/H53_res_yea_positions.rds")
+res$nay_positions <- readRDS("../../data/congress/results/H53_res_nay_positions.rds")
 res$running_time
 # [1] "16518.911 seconds"
 
@@ -202,7 +214,13 @@ dfwn53 <- ideal_df
 # H54 -------------------------------------------------------
 
 # prepare data
-load("../../data/congress/results/H54.RData")
+votes <- readRDS("../../data/congress/results/H54_votes.rds")
+legis <- readRDS("../../data/congress/results/H54_legis.rds")
+bills <- readRDS("../../data/congress/results/H54_bills.rds")
+res <- readRDS("../../data/congress/results/H54_res.rds")
+res$legislators <- readRDS("../../data/congress/results/H54_res_legislators.rds")
+res$yea_positions <- readRDS("../../data/congress/results/H54_res_yea_positions.rds")
+res$nay_positions <- readRDS("../../data/congress/results/H54_res_nay_positions.rds")
 res$running_time
 # [1] "7690.4 seconds"
 
@@ -289,7 +307,13 @@ dfwn54 <- ideal_df
 # H55 -------------------------------------------------------
 
 # prepare data
-load("../../data/congress/results/H55.RData")
+votes <- readRDS("../../data/congress/results/H55_votes.rds")
+legis <- readRDS("../../data/congress/results/H55_legis.rds")
+bills <- readRDS("../../data/congress/results/H55_bills.rds")
+res <- readRDS("../../data/congress/results/H55_res.rds")
+res$legislators <- readRDS("../../data/congress/results/H55_res_legislators.rds")
+res$yea_positions <- readRDS("../../data/congress/results/H55_res_yea_positions.rds")
+res$nay_positions <- readRDS("../../data/congress/results/H55_res_nay_positions.rds")
 res$running_time
 # [1] "9146.716 seconds"
 

@@ -13,7 +13,13 @@ setwd(here("codes", "congress"))
 source("funs.R")
 
 ## read data
-load("../../data/congress/results/H52_55.RData")
+votes <- readRDS("../../data/congress/results/H52_55_votes.rds")
+legis <- readRDS("../../data/congress/results/H52_55_legis.rds")
+bills <- readRDS("../../data/congress/results/H52_55_bills.rds")
+res <- readRDS("../../data/congress/results/H52_55_res.rds")
+res$legislators <- readRDS("../../data/congress/results/H52_55_res_legislators.rds")
+res$yea_positions <- readRDS("../../data/congress/results/H52_55_res_yea_positions.rds")
+res$nay_positions <- readRDS("../../data/congress/results/H52_55_res_nay_positions.rds")
 south <- c("MD", "DE", "VA", "WV", "KY", "NC", "SC", "TN", "GA", "AL", "FL", "MS", "LA", "AR", "MO", "TX")
 west <- c("IA", "MN", "KS", "NE", "SD", "ND", "CO", "CA", "WY", "WA", "OR", "MT", "ID", "NV")
 north <- unique(legis$state_abbrev[!legis$state_abbrev %in% c(south, west)])
@@ -45,14 +51,10 @@ ideal_df <- ideal_df %>%
                              state %in% north ~ "N"))
 
 ## read legislators data 
-load("../../data/congress/results/H52.RData")
-legis52 <- legis
-load("../../data/congress/results/H53.RData")
-legis53 <- legis
-load("../../data/congress/results/H54.RData")
-legis54 <- legis
-load("../../data/congress/results/H55.RData")
-legis55 <- legis
+legis52 <- readRDS("../../data/congress/results/H52_legis.rds")
+legis53 <- readRDS("../../data/congress/results/H53_legis.rds")
+legis54 <- readRDS("../../data/congress/results/H54_legis.rds")
+legis55 <- readRDS("../../data/congress/results/H55_legis.rds")
 
 ideal_df <- ideal_df |>
     mutate(H52 = if_else(name %in% legis52$bioname, 1, 0),

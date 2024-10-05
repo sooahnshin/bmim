@@ -28,7 +28,13 @@ circleFun <- function(center = c(0,0),diameter = 2, npoints = 1000){
   return(data.frame(x = xx, y = yy))
 }
 
-load("../../data/congress/results/H53.RData")
+votes <- readRDS("../../data/congress/results/H53_votes.rds")
+legis <- readRDS("../../data/congress/results/H53_legis.rds")
+bills <- readRDS("../../data/congress/results/H53_bills.rds")
+res <- readRDS("../../data/congress/results/H53_res.rds")
+res$legislators <- readRDS("../../data/congress/results/H53_res_legislators.rds")
+res$yea_positions <- readRDS("../../data/congress/results/H53_res_yea_positions.rds")
+res$nay_positions <- readRDS("../../data/congress/results/H53_res_nay_positions.rds")
 
 res$running_time
 # [1] "16518.911 seconds"

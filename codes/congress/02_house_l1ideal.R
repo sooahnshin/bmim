@@ -49,8 +49,15 @@ run_l1ideal <- function(i, mcmc = 50000, thin = 10, burnin = 20000){
                  minvotes = 20,
                  lop = 0, verbose = 1000, seed = 123)
   ## save
-  save(votes, legis, bills, res,
-       file = paste0("../../data/congress/results/H", house_num[i], ".RData"))
+  saveRDS(votes, file = paste0("../../data/congress/results/H", house_num[i], "_votes.RDS"))
+  saveRDS(legis, file = paste0("../../data/congress/results/H", house_num[i], "_legis.RDS"))
+  saveRDS(bills, file = paste0("../../data/congress/results/H", house_num[i], "_bills.RDS"))
+  ## since res is a large object, we save each component separately
+  saveRDS(res$legislators, file = paste0("../../data/congress/results/H", house_num[i], "_res_legislators.rds"))
+  saveRDS(res$yea_positions, file = paste0("../../data/congress/results/H", house_num[i], "_res_yea_positions.rds"))
+  saveRDS(res$nay_positions, file = paste0("../../data/congress/results/H", house_num[i], "_res_nay_positions.rds"))
+  res$legislators <- res$yea_positions <- res$nay_positions <- NULL
+  saveRDS(res, file = paste0("../../data/congress/results/H", house_num[i], "_res.rds"))
 }
 
 ## run l1ideal for each congress

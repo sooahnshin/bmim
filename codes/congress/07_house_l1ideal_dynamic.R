@@ -45,6 +45,13 @@ legis <- H_legis[filtered$legis,] %>%
 res <- l1ideal(rc, dimensions = 2, mcmc  = mcmc_length, thin = thin_length, burnin = burnin_length, 
                  minvotes = 20,
                  lop = 0, verbose = 1000, seed = 123)
-  
-save(votes, legis, bills, res,
-       file = "../../data/congress/results/H52_55.RData")
+
+saveRDS(votes, file = "../../data/congress/results/H52_55_votes.rds")
+saveRDS(legis, file = "../../data/congress/results/H52_55_legis.rds")
+saveRDS(bills, file = "../../data/congress/results/H52_55_bills.rds")
+## since res is a large object, we save each component separately
+saveRDS(res$legislators, file = "../../data/congress/results/H52_55_res_legislators.rds")
+saveRDS(res$yea_positions, file = "../../data/congress/results/H52_55_res_yea_positions.rds")
+saveRDS(res$nay_positions, file = "../../data/congress/results/H52_55_res_nay_positions.rds")
+res$legislators <- res$yea_positions <- res$nay_positions <- NULL
+saveRDS(res, file = "../../data/congress/results/H52_55_res.rds")
