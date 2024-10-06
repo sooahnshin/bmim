@@ -1,10 +1,5 @@
 # Replication Codes for "L1-based Bayesian Ideal Point Model for Multidimensional Politics"
 
-## Authors
-- [Sooahn Shin](https://sooahnshin.com/) (Creator)
-- Johan Lim
-- Jong Hee Park
-
 ## Paper
 Sooahn Shin, Johan Lim, and Jong Hee Park. "l1-based Bayesian Ideal Point Model for Multidimensional Politics"
 
