@@ -11,9 +11,9 @@
 ## in `codes/simulation/helper.R`)
 ##########################################################################
 ## Instructions:
-## 1. Part 1 is for fitting the model. Since this process will take time and 
-##    involves random data generation, it is recommended to skip this part 
-##    and load the saved results in Part 2.
+## 1. Part 1 is for fitting the model. This process will take time (several
+##    hours for each script). You may want to consider running these R scripts
+##    in parallel to save time.
 ## 2. Part 2 is for generating the figures.
 ##########################################################################
 

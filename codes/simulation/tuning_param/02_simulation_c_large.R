@@ -4,9 +4,7 @@
 ##########################################################################
 ## Data: Synthetic data
 ##########################################################################
-## Instructions: Since this process will take time and involves random data 
-##    generation, it is recommended to skip this R script and load the saved 
-##    results in 03_simulation_results.R.
+## Instructions: This process will take time (several hours).
 ##########################################################################
 
 ## arguments

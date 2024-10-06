@@ -45,5 +45,14 @@ res_list <- future_map(1:n_chain, ~l1ideal(rc, dimensions = 2, mcmc = mcmc_lengt
                                            burnin = burnin_length, minvotes = 20, lop = 0,
                                            verbose = 100, seed = seed_list[[.x]]))
 
-saveRDS(res_list, "../../data/simulation/sim1_res_list.rds")
+# saveRDS(res_list, "../../data/simulation/sim1_res_list.rds")
+# save results into small files
+map(1:n_chain, ~{
+  res <- res_list[[.x]]
+  saveRDS(res$legislators, file = paste0("../../data/simulation/sim1_res", .x, "_legislators.rds"))
+  saveRDS(res$yea_positions, file = paste0("../../data/simulation/sim1_res", .x, "_yea_positions.rds"))
+  saveRDS(res$nay_positions, file = paste0("../../data/simulation/sim1_res", .x, "_nay_positions.rds"))
+  res$legislators <- res$yea_positions <- res$nay_positions <- NULL
+  saveRDS(res, file = paste0("../../data/simulation/sim1_res", .x, ".rds"))
+})
 saveRDS(dat, file = "../../data/simulation/sim1_data.rds")

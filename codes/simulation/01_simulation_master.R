@@ -50,7 +50,13 @@ setwd(here("codes", "simulation"))
 ## Simulation 1: non-partisan
 ##########
 source("helper.R")
-res_list <- read_rds("../../data/simulation/sim1_res_list.rds")
+res_list <- list()
+for(i in 1:4) {
+  res_list[[i]] <- read_rds(paste0("../../data/simulation/sim1_res", i, ".rds"))
+  res_list[[i]]$legislators <- read_rds(paste0("../../data/simulation/sim1_res", i, "_legislators.rds"))
+  res_list[[i]]$yea_positions <- read_rds(paste0("../../data/simulation/sim1_res", i, "_yea_positions.rds"))
+  res_list[[i]]$nay_positions <- read_rds(paste0("../../data/simulation/sim1_res", i, "_nay_positions.rds"))
+}
 n_chain <- length(res_list)
 dat <- read_rds("../../data/simulation/sim1_data.rds")
 
@@ -114,7 +120,13 @@ ggsave("../../figure/sim_synthetic1_rhat.pdf", rhat_p, width = 8, height = 4)
 ##########
 rm(list = ls())
 source("helper.R")
-res_list <- read_rds("../../data/simulation/sim2_res_list.rds")
+res_list <- list()
+for(i in 1:4) {
+  res_list[[i]] <- read_rds(paste0("../../data/simulation/sim2_res", i, ".rds"))
+  res_list[[i]]$legislators <- read_rds(paste0("../../data/simulation/sim2_res", i, "_legislators.rds"))
+  res_list[[i]]$yea_positions <- read_rds(paste0("../../data/simulation/sim2_res", i, "_yea_positions.rds"))
+  res_list[[i]]$nay_positions <- read_rds(paste0("../../data/simulation/sim2_res", i, "_nay_positions.rds"))
+}
 n_chain <- length(res_list)
 dat <- read_rds("../../data/simulation/sim2_data.rds")
 
@@ -185,7 +197,13 @@ ggsave("../../figure/sim_synthetic2_rhat.pdf", rhat_p, width = 8, height = 4)
 ##########
 rm(list = ls())
 source("helper.R")
-res_list <- read_rds("../../data/simulation/sim3_res_list.rds")
+res_list <- list()
+for(i in 1:4) {
+  res_list[[i]] <- read_rds(paste0("../../data/simulation/sim3_res", i, ".rds"))
+  res_list[[i]]$legislators <- read_rds(paste0("../../data/simulation/sim3_res", i, "_legislators.rds"))
+  res_list[[i]]$yea_positions <- read_rds(paste0("../../data/simulation/sim3_res", i, "_yea_positions.rds"))
+  res_list[[i]]$nay_positions <- read_rds(paste0("../../data/simulation/sim3_res", i, "_nay_positions.rds"))
+}
 n_chain <- length(res_list)
 dat <- read_rds("../../data/simulation/sim3_data.rds")
 
